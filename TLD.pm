@@ -1,5 +1,12 @@
 package Net::Domain::TLD;
 
+=head1 INSTALLATION
+
+ perl Makefile.PL
+ make
+ make test
+ make install
+
 =head1 NAME
 
 Net::Domain::TLD - Gives ability to retrieve currently available tld 
@@ -409,5 +416,11 @@ sub exists {
 =head1 AUTHOR
 
 Alexander Pavlovic <alex.pavlovic@marketingtips.com>
+
+=head1 COPYRIGHT
+
+Copyright (c) 2001 Internet Marketing Center . All rights reserved.
+This package is free software; you can redistribute it and/or
+modify it under the same terms as Perl itself.
 
 =cut

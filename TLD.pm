@@ -24,6 +24,12 @@ including new ICANN additions and ccTLDs
  make test
  make install
 
+=head1 COPYRIGHT
+
+Copyright (c) 2003 Alexander Pavlovic. All rights reserved. This program is
+free software; you can redistribute it and/or modify it under the same
+terms as Perl itself.
+
 =cut
 
 use strict;
@@ -36,7 +42,7 @@ use constant GENERIC_TLDS_RESTRICTED => '_gTLDs_restricted';
 use constant CC_TLDS => '_ccTLDs';
 
 sub BEGIN {
-        our ($VERSION) = '$Revision: 1.3 $' =~ /Revision: ([\d.]+)/;
+        our ($VERSION) = '$Revision: 1.5 $' =~ /Revision: ([\d.]+)/;
 }
 
 use constant TLD_PROFILE => {

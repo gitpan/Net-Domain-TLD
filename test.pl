@@ -18,7 +18,5 @@ print "ok 1\n";
 # (correspondingly "not ok 13") depending on the success of chunk 13
 # of the test code):
 
-use Net::Domain::TLD;
 my $tld = Net::Domain::TLD->new;
-
-print qq{ok 2\n} if $tld->exists ( q{.edu} );
+print qq{ok 2\n} if $tld->exists ( q{edu} );

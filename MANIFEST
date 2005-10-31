@@ -2,4 +2,8 @@ MANIFEST
 Makefile.PL
 README
 TLD.pm
-test.pl
+t/basic.t
+t/exists.t
+t/pod-coverage.t
+t/pod.t
+META.yml                                 Module meta-data (added by MakeMaker)

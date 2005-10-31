@@ -1,11 +1,9 @@
+#!perl
 use ExtUtils::MakeMaker;
-# See lib/ExtUtils/MakeMaker.pm for details of how to influence
-# the contents of the Makefile that is written.
-push(@extras,
-    AUTHOR        => 'Alexander Pavlovic <alex-1@telus.net>'
-        ) if ($ExtUtils::MakeMaker::Version >= 5.4301);
+
 WriteMakefile(
-    NAME		=> 'Net::Domain::TLD',
-    VERSION_FROM	=> 'TLD.pm', # finds $VERSION
-    PREREQ_PM		=> {Memoize => 0}, # e.g., Module::Name => 1.1
+    NAME         => 'Net::Domain::TLD',
+    AUTHOR       => 'Alexander Pavlovic <alex-1@telus.net>',
+    VERSION_FROM => 'TLD.pm',
+    PREREQ_PM    => {Memoize => 0},
 );

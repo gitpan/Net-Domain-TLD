@@ -3,9 +3,10 @@ NAME
     names/descriptions and perform verification of given tld name
 
 SYNOPSIS
-     use Net::Domain::TLD;
-     my $domain_list = Net::Domain::TLD->new;
-     my @ccTLDs = $domain_list->ccTLDs;
+     use Net::Domain::TLD qw(tlds);
+
+     my $domain_data = tlds;
+     my @cc_tlds = tlds('cc');
 
 DESCRIPTION
     The purpose of this module is to provide user with current list of
@@ -17,45 +18,3 @@ INSTALL
      make
      make test
      make install
-
-PUBLIC INTERFACES
-    new Creates new Net::Domain::TLD instance
-
-        my $tld = Net::Domain::TLD->new;
-
-    All
-         my @list = $tld->All;
-
-        returns list or hash ref of all TLDs names/descriptions
-
-    TLDs_new
-         my @list = $tld->TLDs_new;
-
-        returns list or hash ref of new TLD names/descriptions
-
-    gTLDs_open
-         my $names = $tld->gTLDs_open;
-
-        returns a list or hash ref of generic TLD names/descriptions
-        available to general public
-
-    gTLDs_restricted
-         my @list = $tld->gTLDs_restricted;
-
-        returns a list or hash ref of generic TLD names/descriptions
-        restricted for assignment to specific users
-
-    ccTLDs
-         my $names = $tld->ccTLDs;
-
-        returns a list or hash ref of country code TLD names/descriptions
-
-    exists
-        determines if given tld exists, returns 1 if tld is valid and 0 if
-        not
-
-         $tld->exists(q{info}) ? print q{ok} : print q{not ok};
-
-AUTHOR
-    Alexander Pavlovic <alex-1@telus.net>
-

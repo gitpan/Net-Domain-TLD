@@ -13,13 +13,13 @@ Net::Domain::TLD - look up and validate TLDs
 
 =head1 VERSION
 
-version 1.60
+version 1.62
 
  $Id$
 
 =cut
 
-our $VERSION = '1.60';
+our $VERSION = '1.62';
 
 =head1 SYNOPSIS
 
@@ -61,7 +61,7 @@ my %tld_profile = (
     int => q{International treaties/databases},
   },
   #fetched from http://www.iana.org/cctld/cctld-whois.htm
-  cc_tlds => {
+  cc => {
     ac => q{Ascension Island},
     ad => q{Andorra},
     ae => q{United Arab Emirates},
@@ -346,6 +346,7 @@ Valid groups are:
 sub _uniq { my %h; map { $h{$_}++ == 0 ? $_ : () } @_; } 
 
 my %tld_group = (
+  cc_tlds  => [ qw(cc) ],
   gtld_new => [ qw(new_open new_restricted) ],
   gtld     => [ qw(gtld_open gtld_restricted gtld_new) ],
 );
@@ -377,6 +378,7 @@ sub tlds {
       my $group = $_;
       map { $_ => $group->{$_} } keys %$group;
     } values %tld_profile;
+    return \%tld;
   }
 }
 
@@ -452,7 +454,7 @@ sub new {
 }
 
 sub All { tlds; }
-sub TLDs_new   { tlds('new'); }
+sub TLDs_new   { tlds('gtld_new'); }
 sub gTLDs_open { tlds('gtld_open'); }
 sub gTLDs_restricted { tlds('gtld_restricted'); }
 sub ccTLDs { tlds('cc'); }

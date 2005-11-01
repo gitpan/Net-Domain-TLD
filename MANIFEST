@@ -1,9 +1,11 @@
 MANIFEST
+Changes
 Makefile.PL
 README
 TLD.pm
 t/basic.t
 t/exists.t
+t/oo.t
 t/pod-coverage.t
 t/pod.t
 META.yml                                 Module meta-data (added by MakeMaker)

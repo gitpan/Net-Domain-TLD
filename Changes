@@ -1,0 +1,10 @@
+Revision history for Net::Domain::TLD
+
+1.62    2005-10-31 Treat
+        full test coverage
+        previous revision was broken in scalar context
+
+1.60    2005-10-31 Trick
+        procedural interface provided
+        object oriented interface marked for deprecation
+        useless memoization removed

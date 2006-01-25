@@ -12,3 +12,5 @@ Revision history for Net::Domain::TLD.
 	- Updated the tld profile with new iana assigned entries
 	- Rewrote "tlds" and "tld_exists subs", less code and tested them to ensure reliable operation
 	- "tld_exists" now also takes type which allows it to inspect specified profile type for that tld
+1.64  Wed Jan 25 13:00:00 2006
+	- minor documentation fix

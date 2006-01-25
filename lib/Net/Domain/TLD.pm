@@ -1,7 +1,7 @@
 package Net::Domain::TLD;
 use base qw(Exporter);
 our @EXPORT_OK = qw(tlds tld_exists);
-our $VERSION = '1.63';
+our $VERSION = '1.64';
 
 use strict;
 use warnings;
@@ -34,15 +34,20 @@ use constant TLD_TYPES => qw ( new_open new_restricted gtld_open gtld_restricted
 
 my %tld_profile = (
 	new_open => { 
-		info   => q{Unrestricted use},
+		info => q{Unrestricted use},
 	},
 	new_restricted => { 
-		aero   => q{Air-transport industry}, 
-		biz    => q{Businesses},
-		coop   => q{Cooperatives},
+		aero => q{Air-transport industry}, 
+		arpa => q{Address and Routing Parameter Area},
+		biz => q{Businesses},
+		cat => q{Catalan linguistic and cultural community},
+		coop => q{Cooperatives},
+		jobs => q{Human Resource Management},
+		mobi => q{Mobile},
 		museum => q{Museums},
-		name   => q{For registration by individuals},
-		pro    => q{Accountants, lawyers, and physicians},
+		name => q{For registration by individuals},
+		pro => q{Accountants, lawyers, and physicians},
+		travel => q{Travel industry}
 	},
 	gtld_open => {
 		com => q{Commercial organization},
@@ -123,6 +128,7 @@ my %tld_profile = (
 		er => q{Eritrea},
 		es => q{Spain},
 		et => q{Ethiopia},
+		eu => q{European Union},
 		fi => q{Finland},
 		fj => q{Fiji},
 		fk => q{Falkland Islands (Malvina)},
@@ -130,6 +136,7 @@ my %tld_profile = (
 		fo => q{Faroe Islands},
 		fr => q{France},
 		ga => q{Gabon},
+		gb => q{United Kingdom},
 		gd => q{Grenada},
 		ge => q{Georgia},
 		gf => q{French Guiana},
@@ -258,6 +265,7 @@ my %tld_profile = (
 		so => q{Somalia},
 		sr => q{Suriname},
 		st => q{Sao Tome and Principe},
+		su => q{Soviet Union},
 		sv => q{El Salvador},
 		sy => q{Syrian Arab Republic},
 		sz => q{Swaziland},
@@ -268,6 +276,7 @@ my %tld_profile = (
 		th => q{Thailand},
 		tj => q{Tajikistan},
 		tk => q{Tokelau},
+		tl => q{Timor-Leste},
 		tm => q{Turkmenistan},
 		tn => q{Tunisia},
 		to => q{Tonga},

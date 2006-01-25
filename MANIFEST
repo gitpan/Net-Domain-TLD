@@ -1,11 +1,8 @@
-MANIFEST
 Changes
+lib/Net/Domain/TLD.pm
+LICENSE
 Makefile.PL
+MANIFEST
+META.yml
 README
-TLD.pm
-t/basic.t
-t/exists.t
-t/oo.t
-t/pod-coverage.t
-t/pod.t
-META.yml                                 Module meta-data (added by MakeMaker)
+t/01_ini.t

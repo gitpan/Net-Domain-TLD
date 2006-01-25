@@ -1,20 +1,76 @@
-NAME
-    Net::Domain::TLD - Gives ability to retrieve currently available tld
-    names/descriptions and perform verification of given tld name
+Net::Domain::TLD(3)   User Contributed Perl Documentation  Net::Domain::TLD(3)
 
-SYNOPSIS
-     use Net::Domain::TLD qw(tlds);
 
-     my $domain_data = tlds;
-     my @cc_tlds = tlds('cc');
 
-DESCRIPTION
-    The purpose of this module is to provide user with current list of
-    available top level domain names including new ICANN additions and
-    ccTLDs
+NNAAMMEE
+               Net::Domain::TLD - Work with TLD names
 
-INSTALL
-     perl Makefile.PL
-     make
-     make test
-     make install
+SSYYNNOOPPSSIISS
+               use Net::Domain::TLD;
+               my $domain_list = Net::Domain::TLD->new;
+               my @ccTLDs = $domain_list->ccTLDs;
+
+DDEESSCCRRIIPPTTIIOONN
+               The purpose of this module is to provide user with current list of
+               available top level domain names including new ICANN additions and ccTLDs
+               Currently TLD definitions have been acquired from the following sources:
+
+               http://www.icann.org/tlds/
+               http://www.dnso.org/constituency/gtld/gtld.html
+               http://www.iana.org/cctld/cctld-whois.htm
+
+BBUUGGSS
+               If you find any, please let the author know
+
+AAUUTTHHOORR
+               Alex Pavlovic
+               CPAN ID: ALEXP
+               alex.pavlovic@taskforce-1.com
+
+CCOOPPYYRRIIGGHHTT
+               Copyright (c) 2002 Alex Pavlovic. All rights reserved.
+               This program is free software; you can redistribute
+               it and/or modify it under the same terms as Perl itself.
+
+               The full text of the license can be found in the
+               LICENSE file included with this module.
+
+SSEEEE AALLSSOO
+               perl(1).
+
+PPUUBBLLIICC MMEETTHHOODDSS
+               Each public function/method is described here.
+               These are how you should interact with this module.
+
+PPUUBBLLIICC IINNTTEERRFFAACCEESS
+       new
+                   Creates new Net::Domain::TLD instance
+                   my $tld = Net::Domain::TLD->new;
+
+       All
+                   my @list = $tld->All;
+                   returns list or hash ref of all TLDs names/descriptions
+
+       TLDs_new
+                   my @list = $tld->TLDs_new;
+                   returns list or hash ref of new TLD names/descriptions
+
+       gTLDs_open
+                   my $names = $tld->gTLDs_open;
+                   returns a list or hash ref of generic TLD names/descriptions available to general public
+
+       gTLDs_restricted
+                   my @list = $tld->gTLDs_restricted;
+                   returns a list or hash ref of generic TLD names/descriptions restricted for assignment to specific users
+
+       ccTLDs
+                   my $names = $tld->ccTLDs;
+                   returns a list or hash ref of country code TLD names/descriptions
+
+       exists
+                   determines if given tld exists, returns 1 if tld is valid and 0 if not
+                   $tld->exists(info) ? print ok : print not ok;
+
+
+
+perl v5.8.7                       2006-01-24               Net::Domain::TLD(3)

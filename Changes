@@ -1,10 +1,6 @@
-Revision history for Net::Domain::TLD
+Revision history for Perl extension Apache::CookieToQuery.
 
-1.62    2005-10-31 Treat
-        full test coverage
-        previous revision was broken in scalar context
-
-1.60    2005-10-31 Trick
-        procedural interface provided
-        object oriented interface marked for deprecation
-        useless memoization removed
+1.04  Mon Jul 15 23:30:04 2002
+	- original version
+1.05  Mon Jan 23 12:00:00 2006
+	- minor documentation fixes

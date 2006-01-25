@@ -6,9 +6,9 @@ NNAAMMEE
                Net::Domain::TLD - Work with TLD names
 
 SSYYNNOOPPSSIISS
-               use Net::Domain::TLD;
-               my $domain_list = Net::Domain::TLD->new;
-               my @ccTLDs = $domain_list->ccTLDs;
+               use Net::Domain::TLD qw(tlds tld_exists);
+               my @ccTLDs = tlds('cc');
+               print "TLD ok\n" if tld_exists('ac');
 
 DDEESSCCRRIIPPTTIIOONN
                The purpose of this module is to provide user with current list of
@@ -19,58 +19,41 @@ DDEESSCCRRIIPPTTIIOONN
                http://www.dnso.org/constituency/gtld/gtld.html
                http://www.iana.org/cctld/cctld-whois.htm
 
-BBUUGGSS
-               If you find any, please let the author know
-
-AAUUTTHHOORR
-               Alex Pavlovic
-               CPAN ID: ALEXP
-               alex.pavlovic@taskforce-1.com
-
-CCOOPPYYRRIIGGHHTT
-               Copyright (c) 2002 Alex Pavlovic. All rights reserved.
-               This program is free software; you can redistribute
-               it and/or modify it under the same terms as Perl itself.
-
-               The full text of the license can be found in the
-               LICENSE file included with this module.
-
-SSEEEE AALLSSOO
-               perl(1).
-
 PPUUBBLLIICC MMEETTHHOODDSS
                Each public function/method is described here.
                These are how you should interact with this module.
 
-PPUUBBLLIICC IINNTTEERRFFAACCEESS
-       new
-                   Creates new Net::Domain::TLD instance
-                   my $tld = Net::Domain::TLD->new;
+       _"_t_l_d_s_"
 
-       All
-                   my @list = $tld->All;
-                   returns list or hash ref of all TLDs names/descriptions
+               my @all_tlds = tlds; #array of tlds
+               my $all_tlds = tlds; #hashref of tlds and their descriptions
 
-       TLDs_new
-                   my @list = $tld->TLDs_new;
-                   returns list or hash ref of new TLD names/descriptions
+               my @cc_tlds = tlds('cc'); #array of just 'cc' type tlds
+               my $cc_tlds = tlds('cc'); #hashref of just 'cc' type tlds and their descriptions
 
-       gTLDs_open
-                   my $names = $tld->gTLDs_open;
-                   returns a list or hash ref of generic TLD names/descriptions available to general public
+               Valid types are:
+                       cc                 - country code domains
+                       gtld_open          - generic domains that anyone can register
+                       gtld_restricted    - generic restricted registration domains
+                       new_open           - recently added generic domains
+                       new_restricted     - new restricted registration domains
 
-       gTLDs_restricted
-                   my @list = $tld->gTLDs_restricted;
-                   returns a list or hash ref of generic TLD names/descriptions restricted for assignment to specific users
+       _"_t_l_d___e_x_i_s_t_s_"
 
-       ccTLDs
-                   my $names = $tld->ccTLDs;
-                   returns a list or hash ref of country code TLD names/descriptions
+               die "no such domain" unless tld_exists($tld);
+               die "no such domain" unless tld_exists($tld, 'cc');
 
-       exists
-                   determines if given tld exists, returns 1 if tld is valid and 0 if not
-                   $tld->exists(info) ? print ok : print not ok;
+               This routine returns true if the given domain exists and false if it does not.
+
+CCOOPPYYRRIIGGHHTT
+               Copyright (c) 2003-2005 Alex Pavlovic, all rights reserved.  This program
+               is free software; you can redistribute it and/or modify it under the same terms
+               as Perl itself.
+
+AAUUTTHHOORRSS
+               Alexander Pavlovic C<< <alex.pavlovic@taskforce-1.com> >>
+               Ricardo SIGNES C<< <rjbs@cpan.org> >>
 
 
 
-perl v5.8.7                       2006-01-24               Net::Domain::TLD(3)
+perl v5.8.7                       2006-01-25               Net::Domain::TLD(3)

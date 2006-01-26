@@ -3,9 +3,9 @@ Revision history for Net::Domain::TLD.
 1.05  Tue Jan 23 12:00:00 2001
 	- original version
 1.06  Mon Jan 23 16:00:00 2006
-	- minor fixes
+	- minor documentation fix
 1.07  Tue Jan 24 18:00:00 2006
-	- documentation fixes
+	- minor code fix
 1.63  Wed Jan 25 12:00:00 2006
 	- Dropped OO code ( There are previous versions of module if anyone needs it ) 
 	- Fixed documentation and code indenting.
@@ -13,4 +13,6 @@ Revision history for Net::Domain::TLD.
 	- Rewrote "tlds" and "tld_exists subs", less code and tested them to ensure reliable operation
 	- "tld_exists" now also takes type which allows it to inspect specified profile type for that tld
 1.64  Wed Jan 25 13:00:00 2006
+	- minor documentation fix
+1.65  Wed Jan 25 18:00:00 2006
 	- minor documentation fix

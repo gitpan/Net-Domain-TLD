@@ -1,7 +1,7 @@
 package Net::Domain::TLD;
 use base qw(Exporter);
 our @EXPORT_OK = qw(tlds tld_exists);
-our $VERSION = '1.64';
+our $VERSION = '1.65';
 
 use strict;
 use warnings;
@@ -18,7 +18,7 @@ use constant TLD_TYPES => qw ( new_open new_restricted gtld_open gtld_restricted
 
 	use Net::Domain::TLD qw(tlds tld_exists);
 	my @ccTLDs = tlds('cc');
-	print "TLD ok\n" if tld_exists('ac');
+	print "TLD ok\n" if tld_exists('ac','cc');
 
 =head1 DESCRIPTION
 
@@ -334,6 +334,8 @@ sub check_type {
 
 =head3 C<< tlds >>
 
+	This routine returns the tlds requested.
+
 	my @all_tlds = tlds; #array of tlds
 	my $all_tlds = tlds; #hashref of tlds and their descriptions
 
@@ -362,11 +364,11 @@ sub tlds {
 
 =head3 C<< tld_exists >>
 
-	die "no such domain" unless tld_exists($tld);
-	die "no such domain" unless tld_exists($tld, 'cc');
-		
-	This routine returns true if the given domain exists and false if it does not.
+	This routine returns true if the given domain exists and false otherwise.
 
+	die "no such domain" unless tld_exists($tld); #call without tld type 
+	die "no such domain" unless tld_exists($tld, 'new_open'); #call with tld type
+		
 =cut
 
 sub tld_exists {
@@ -386,8 +388,8 @@ sub tld_exists {
 
 =head1 AUTHORS
 
-	Alexander Pavlovic C<< <alex.pavlovic@taskforce-1.com> >>
-	Ricardo SIGNES C<< <rjbs@cpan.org> >>
+	Alexander Pavlovic <alex.pavlovic@taskforce-1.com>
+	Ricardo SIGNES <rjbs@cpan.org>
 
 =cut
 

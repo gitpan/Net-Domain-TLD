@@ -1,9 +1,10 @@
 package Net::Domain::TLD;
-use base qw(Exporter);
-our @EXPORT_OK = qw(tlds tld_exists);
-our $VERSION = '1.65';
-
 use strict;
+use base qw(Exporter);
+use 5.006;
+our @EXPORT_OK = qw(tlds tld_exists);
+our $VERSION = '1.67';
+
 use warnings;
 use Carp;
 use Storable qw ( dclone );
@@ -47,7 +48,8 @@ my %tld_profile = (
 		museum => q{Museums},
 		name => q{For registration by individuals},
 		pro => q{Accountants, lawyers, and physicians},
-		travel => q{Travel industry}
+		travel => q{Travel industry},
+		tel => q{?}
 	},
 	gtld_open => {
 		com => q{Commercial organization},
@@ -77,6 +79,7 @@ my %tld_profile = (
 		at => q{Austria},
 		au => q{Australia},
 		aw => q{Aruba},
+	        ax => q(Aland Islands),
 		az => q{Azerbaijan},
 		ba => q{Bosnia and Herzegovina},
 		bb => q{Barbados},
@@ -87,6 +90,7 @@ my %tld_profile = (
 		bh => q{Bahrain},
 		bi => q{Burundi},
 		bj => q{Benin},
+	        bl => q(Saint Barthelemy),
 		bm => q{Bermuda},
 		bn => q{Brunei Darussalam},
 		bo => q{Bolivia},
@@ -199,6 +203,8 @@ my %tld_profile = (
 		ma => q{Morocco},
 		mc => q{Monaco},
 		md => q{Moldova, Republic of},
+	        me => q(Montenegro),
+	        mf => q{Saint Martin (French part)},
 		mg => q{Madagascar},
 		mh => q{Marshall Islands},
 		mk => q{Macedonia, Former Yugoslav Republic},
@@ -247,6 +253,7 @@ my %tld_profile = (
 		qa => q{Qatar},
 		re => q{Reunion Island},
 		ro => q{Romania},
+	        rs => q(Serbia),
 		ru => q{Russian Federation},
 		rw => q{Rwanda},
 		sa => q{Saudi Arabia},
@@ -368,7 +375,7 @@ sub tlds {
 
 	die "no such domain" unless tld_exists($tld); #call without tld type 
 	die "no such domain" unless tld_exists($tld, 'new_open'); #call with tld type
-		
+
 =cut
 
 sub tld_exists {

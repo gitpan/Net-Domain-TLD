@@ -16,3 +16,10 @@ Revision history for Net::Domain::TLD.
 	- minor documentation fix
 1.65  Wed Jan 25 18:00:00 2006
 	- minor documentation fix
+1.66  Wed Oct 10 23:00:00 2007 by Alexandr Ciornii
+	- Added .tel
+	- pod.t
+	- version 5.6 required explicitly
+	- license in Makefile.PL
+1.67  Mon Dec 10 10:00:00 2007 by Jonas Liljegren
+        - Added .ax, .bl, .me, .mf, .rs

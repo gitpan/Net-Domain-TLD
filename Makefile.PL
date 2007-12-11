@@ -1,3 +1,4 @@
+use 5.006;
 use ExtUtils::MakeMaker;
 # See lib/ExtUtils/MakeMaker.pm for details of how to influence
 # the contents of the Makefile that is written.
@@ -8,6 +9,9 @@ WriteMakefile(
     ABSTRACT     => 'Net::Domain::TLD - Work with TLD names',
     PREREQ_PM   => {
 	'Carp'	=> '0', 
-	'Storable' => '0'
-    }
+	'Storable' => '0',
+	'Test::More' => 0,
+    },
+    ($ExtUtils::MakeMaker::VERSION ge '6.30_00'? 
+     ('LICENSE'		=> 'perl', ) : ()),
 );

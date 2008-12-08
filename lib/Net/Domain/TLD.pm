@@ -3,7 +3,7 @@ use strict;
 use base qw(Exporter);
 use 5.006;
 our @EXPORT_OK = qw(tlds tld_exists);
-our $VERSION = '1.67';
+our $VERSION = '1.68';
 
 use warnings;
 use Carp;
@@ -38,7 +38,8 @@ my %tld_profile = (
 		info => q{Unrestricted use},
 	},
 	new_restricted => { 
-		aero => q{Air-transport industry}, 
+		aero => q{Air-transport industry},
+		asia => q{Companies, organisations and individuals in the Asia-Pacific region},
 		arpa => q{Address and Routing Parameter Area},
 		biz => q{Businesses},
 		cat => q{Catalan linguistic and cultural community},
@@ -49,7 +50,7 @@ my %tld_profile = (
 		name => q{For registration by individuals},
 		pro => q{Accountants, lawyers, and physicians},
 		travel => q{Travel industry},
-		tel => q{?}
+		tel => q{For businesses and individuals to publish contact data}
 	},
 	gtld_open => {
 		com => q{Commercial organization},

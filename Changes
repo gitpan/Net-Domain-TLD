@@ -1,4 +1,4 @@
-Revision history for Net::Domain::TLD.
+Revision history for Net::Domain::TLD
 
 1.05  Tue Jan 23 12:00:00 2001
 	- original version
@@ -23,3 +23,6 @@ Revision history for Net::Domain::TLD.
 	- license in Makefile.PL
 1.67  Mon Dec 10 10:00:00 2007 by Jonas Liljegren
         - Added .ax, .bl, .me, .mf, .rs
+1.68  Sun Dec 07 18:00:00 2008
+	- addition of .asia
+

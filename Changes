@@ -25,4 +25,5 @@ Revision history for Net::Domain::TLD
         - Added .ax, .bl, .me, .mf, .rs
 1.68  Sun Dec 07 18:00:00 2008
 	- addition of .asia
-
+1.69  Sun Jan 17 18:00:00 2011
+	- addition of .xxx

@@ -37,6 +37,7 @@ PUBLIC METHODS
         gtld_new           - new gTLDs
         new_open           - recently added generic domains
         new_restricted     - new restricted registration domains
+        reserved           - RFC2606 restricted names, not returned by tlds
 
    "tld_exists"
       This routine returns true if the given domain exists and false otherwise.

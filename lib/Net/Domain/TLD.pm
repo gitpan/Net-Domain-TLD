@@ -3,7 +3,7 @@ use strict;
 use base qw(Exporter);
 use 5.006;
 our @EXPORT_OK = qw(tlds tld_exists);
-our $VERSION = '1.71';
+our $VERSION = '1.72';
 
 use warnings;
 use Carp;
@@ -35,7 +35,13 @@ use constant TLD_TYPES => qw ( new_open new_restricted gtld_open gtld_restricted
 =cut
 
 my %tld_profile = (
-  new_open => { 
+  reserved => {
+    test => q{DNS testing names},
+    example => q{Documentation names},
+    invalid => q{Invalid names},
+    localhost => q{Loopback names}
+  },
+  new_open => {
     info => q{Unrestricted use},
     xxx => q{sponsored top-level domain}
   },
@@ -596,6 +602,7 @@ sub check_type {
     gtld_new           - new gTLDs
     new_open           - recently added generic domains
     new_restricted     - new restricted registration domains
+    reserved           - RFC2606 restricted names, not returned by tlds
 
 =cut
 

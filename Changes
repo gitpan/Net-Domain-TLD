@@ -268,3 +268,6 @@ Revision history for Net::Domain::TLD
         'xn--zfr164b' => q{China Organizational Name Administration Center},
         'xyz' => q{XYZ.COM LLC},
         'zone' => q{Outer Falls, LLC},
+        
+1.72  Thu Mar 20 21:00 2014
+        - added support for RFC2606 explicitly reserved names
